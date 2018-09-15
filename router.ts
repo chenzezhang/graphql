@@ -4,8 +4,19 @@ import * as Router from 'koa-router';
 const router = new Router;
 
 import { graphql } from 'graphql';
-import {schema, ItemSchema} from './schema';
+import {ItemSchema} from './schema';
 import { throws } from 'assert';
+/**
+ * query ItemQuery{ 
+        item(id:0){
+            id
+            title
+            price
+            pic
+        }
+       
+        }
+ */
 
 router.post('/graphql', (ctx: any) => {
     graphql(ItemSchema, ctx.request.body.data)
