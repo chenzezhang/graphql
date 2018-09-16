@@ -11,37 +11,37 @@ import { getPostById } from './data'
 let count = 0;
 let id = 0;
 
-// export const schema = new GraphQLSchema({
-// 	query: new GraphQLObjectType({ // 原始操作
-// 		name: 'RootQueryType',
-// 		fields: {
-// 			count: {
-// 				type: GraphQLInt,
-// 				description: 'The count!',
-// 				resolve: function () {
-// 					return count;
-// 				}
-// 			}
-// 		}
-// 	}),
-// 	mutation: new GraphQLObjectType({  // 数据操作
-// 		name: 'RootMutationType',
-// 		fields: {
-// 		  updateCount: {
-// 			type: GraphQLInt,
-// 			description: 'Update the count',
-// 			resolve: function() {
-// 			  count += 1;
-// 			  return count;
-// 			}
-// 		  }
-// 		}
-// 	  })
-// });
+export const schema = new GraphQLSchema({
+	query: new GraphQLObjectType({ // 原始操作
+		name: 'RootQueryType',
+		fields: {
+			count: {
+				type: GraphQLInt,
+				description: 'The count!',
+				resolve: function () {
+					return count;
+				}
+			}
+		}
+	}),
+	mutation: new GraphQLObjectType({  // 数据操作
+		name: 'RootMutationType',
+		fields: {
+		  updateCount: {
+			type: GraphQLInt,
+			description: 'Update the count',
+			resolve: function() {
+			  count += 1;
+			  return count;
+			}
+		  }
+		}
+	  })
+});
 
 const ItemService = (id: number) => {
 	const items = [
-		{id: '1', title: 'Item 1',price:'100', pic:'11'},
+		{id: '1', title: 'Item 1',price:'100', pic:'11', promotion: '34'},
 		{id: '2', title: 'Item 2',price:'100', pic:'11'},
 		{id: '3', title: 'Item 3',price:'100', pic:'11'},
 		{id: '4', title: 'Item 4',price:'100', pic:'11'},
@@ -50,7 +50,7 @@ const ItemService = (id: number) => {
 	  return items[id];   
 }
 
-const ItemType = new GraphQLObjectType({
+const obj = {
 	name: "item",
 	description: "item",
 	fields: {
@@ -78,7 +78,9 @@ const ItemType = new GraphQLObjectType({
 			description: "promotion price"
 		}
 	}
-});
+}
+
+const ItemType = new GraphQLObjectType(obj);
 
 export const ItemSchema = new GraphQLSchema({
 	query: new GraphQLObjectType({
@@ -100,4 +102,4 @@ export const ItemSchema = new GraphQLSchema({
 		}
 	  }
 	})
-  });
+});

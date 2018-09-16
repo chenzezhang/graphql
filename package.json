@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && cd build && node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,13 +14,14 @@
     "@types/koa": "^2.0.46",
     "@types/koa-cors": "0.0.0",
     "@types/koa-router": "^7.0.31",
+    "apollo-server": "^2.0.8",
+    "apollo-server-koa": "^2.0.7",
     "babel": "^6.23.0",
     "eslint": "^5.5.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "graphql": "^14.0.2",
-    "graphql-server-koa": "^1.4.0",
     "koa": "^2.5.3",
     "koa-body": "^4.0.4",
     "koa-cors": "0.0.16",
