@@ -21,6 +21,7 @@ export const resolver = {
     posts: () => posts,
     author: (root, obj, ctx) => authors[obj.id],
   },
+
   Author: {
     posts: author => posts.filter(v => v.authorId == author.id )
   },
