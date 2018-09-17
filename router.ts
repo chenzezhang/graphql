@@ -21,14 +21,14 @@ import { throws } from 'assert';
         }
  */
 
-// router.post('/asdf', (ctx: any) => {
-//     graphql(ItemSchema, ctx.request.body.data)
-//         .then(result => {
-//             console.log(result)
-//             ctx.body = JSON.stringify(result, null, 2);
-//         })
-//         .catch(err => {
-//             throw err;
-//         })
-// })
+router.post('/asdf', (ctx: any) => {
+    graphql(ItemSchema, ctx.request.body.data)
+        .then(result => {
+            console.log(result)
+            ctx.body = JSON.stringify(result, null, 2);
+        })
+        .catch(err => {
+            throw err;
+        })
+})
 export { router };
