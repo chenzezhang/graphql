@@ -13,3 +13,4 @@ tmp/
 npm-debug.log
 node_modules/
 /config
+build/

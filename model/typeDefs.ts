@@ -2,7 +2,7 @@
  * @param 查询字段
  */
 
-export const typeDef  = `
+export const typeDef = `
   type Author {
     id: Int!
     firstName: String

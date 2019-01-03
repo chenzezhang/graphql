@@ -26,6 +26,7 @@
     "koa-body": "^4.0.4",
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "typescript": "^3.2.2"
   }
 }
